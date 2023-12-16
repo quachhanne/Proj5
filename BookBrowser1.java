@@ -234,12 +234,14 @@ public class BookBrowser1 extends JFrame {
     private void displayBookInfo() {
         TreeMap<?, Book> selectedBooks = getSelectedTreeMap();
         Book book = selectedBooks.toValueArray(new Book[selectedBooks.size()])[currentIndex];
-        isbnTextField.setText(book.ISBN());
-        authorTextField.setText(book.author());
-        yearTextField.setText(Integer.toString(book.year()));
-        originalTitleTextField.setText(book.originalTitle());
-        titleTextField.setText(book.title());
-        ratingTextField.setText(Double.toString(book.averageRating()));
+
+            isbnTextField.setText(book.ISBN());
+            authorTextField.setText(book.author());
+            yearTextField.setText(Integer.toString(book.year()));
+            originalTitleTextField.setText(book.originalTitle());
+            titleTextField.setText(book.title());
+            ratingTextField.setText(Double.toString(book.averageRating()));
+
         repaint();
         revalidate();
     }
@@ -262,7 +264,6 @@ public class BookBrowser1 extends JFrame {
                 return new TreeMap<>();
         }
     }
-
 
     //Demo
     public static void main(String[] args) throws FileNotFoundException {
