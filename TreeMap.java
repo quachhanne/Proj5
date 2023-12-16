@@ -92,20 +92,20 @@ public class TreeMap<K extends Comparable<K>,V extends Comparable<V>> implements
      * @param   value   the value to be associated with the key.
      * @return          the updated root of the subtree.
      */
-    private TreeMapNode<K,V> put(TreeMapNode <K,V> root, K key, V value){
-        if (root == null){
-            return new TreeMapNode<>(key,value);
+    private TreeMapNode<K, V> put(TreeMapNode<K, V> root, K key, V value) {
+        if (root == null) {
+            return new TreeMapNode<>(key, value);
         }
         int compareKey = key.compareTo(root.key);
-        if(compareKey < 0){
+        if (compareKey <= 0) {
             root.left = put(root.left, key, value);
-        } else if (compareKey > 0){
-            root.right = put(root.right, key, value);
         } else {
-            root.value = value;
+            root.right = put(root.right, key, value);
         }
+
         return root;
     }
+
     /**
      * Checks the tree to see if it contains the specified key.
      *
